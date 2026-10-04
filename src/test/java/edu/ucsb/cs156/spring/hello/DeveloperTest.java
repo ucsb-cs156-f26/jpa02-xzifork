@@ -30,4 +30,21 @@ public class DeveloperTest {
         assertEquals("xzifork", Developer.getGithubId());
     }
 
+    @Test
+    public void getTeam_returns_team_with_correct_name() {
+        Team  t = Developer.getTeam();
+        assertEquals("f26-11", t.getName());
+    }
+
+    @Test
+    public void getTeam_returns_team_with_correct_members() {
+        Team  t = Developer.getTeam();
+        assertTrue(t.getMembers().contains("Brandon S."),"Team should contain Brandon S.");
+        assertTrue(t.getMembers().contains("Chazz"),"Team should contain Chazz");
+        assertTrue(t.getMembers().contains("David"),"Team should contain David");
+        assertTrue(t.getMembers().contains("Edward"),"Team should contain Edward");
+        assertTrue(t.getMembers().contains("Noah R."),"Team should contain Noah R.");
+        assertTrue(t.getMembers().contains("Tyler"),"Team should contain Tyler");
+    }
+
 }
